@@ -1,0 +1,12 @@
+<div>
+    <h2>Напоминания</h2>
+    <form (ngSubmit)="addReminder()">
+      <input [(ngModel)]="newReminder.text" name="text" placeholder="Текст" required>
+      <input [(ngModel)]="newReminder.date" name="date" type="date" required>
+      <button type="submit">Добавить</button>
+    </form>
+    <div *ngFor="let reminder of reminders">
+      <p>{{ reminder.text }} ({{ reminder.date }})</p>
+      <button (click)="deleteReminder(reminder.id)">Удалить</button>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+<div class="note-edit">
+    <h2>{{ noteId ? 'Редактировать заметку' : 'Создать заметку' }}</h2>
+    <form (ngSubmit)="saveNote()">
+      <label>
+        Заголовок:
+        <input [(ngModel)]="note.title" name="title" placeholder="Введите заголовок" required />
+      </label>
+      <label>
+        Содержимое:
+        <textarea [(ngModel)]="note.content" name="content" placeholder="Введите содержимое"></textarea>
+      </label>
+      <button type="submit">Сохранить</button>
+      <button type="button" (click)="cancel()">Отмена</button>
+    </form>
+  </div>

@@ -1,0 +1,10 @@
+<div class="notes-list">
+  <h1>Список заметок</h1>
+  <button (click)="createNewNote()">Создать новую заметку</button>
+  <div *ngFor="let note of notes" class="note-item">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content }}</p>
+    <button (click)="editNote(note.id)">Редактировать</button>
+    <button (click)="deleteNote(note.id)">Удалить</button>
+  </div>
+</div>

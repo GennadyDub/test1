@@ -1,0 +1,11 @@
+<div>
+    <h2>Теги</h2>
+    <form (ngSubmit)="addTag()">
+      <input [(ngModel)]="newTag" name="tag" placeholder="Новый тег" required>
+      <button type="submit">Добавить</button>
+    </form>
+    <div *ngFor="let tag of tags">
+      <span>{{ tag }}</span>
+      <button (click)="deleteTag(tag)">Удалить</button>
+    </div>
+  </div>
